@@ -1,0 +1,19 @@
+{
+  "message": "Sucesso ao buscar rifas",
+  "metadata": {
+    "data": [
+      {
+        "id": 1,
+        "raffleName": "Rifa de Pascoa"
+      },
+      {
+        "id": 2,
+        "raffleName": "Rifa de Ano Novo"
+      },
+      {
+        "id": 3,
+        "raffleName": "Rifa de Natal"
+      }
+    ]
+  }
+}

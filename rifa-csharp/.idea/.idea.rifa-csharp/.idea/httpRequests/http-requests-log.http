@@ -1,0 +1,45 @@
+GET http://localhost:5209/raffle/getReport
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.3.0.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2025-12-18T112032-1.200.json
+
+###
+
+GET http://localhost:5209/raffle/listParticipants/1
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.3.0.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2025-12-18T112032.200.json
+
+###
+
+GET http://localhost:5209/raffle/1
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.3.0.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2025-12-18T112031-1.200.json
+
+###
+
+GET http://localhost:5209/raffle/listNamesRaffle
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.3.0.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2025-12-18T112031.200.json
+
+###
+
+GET http://localhost:5209/raffle/listNamesRaffle
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2025.3.0.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2025-12-18T111920.200.json
+
+###
+

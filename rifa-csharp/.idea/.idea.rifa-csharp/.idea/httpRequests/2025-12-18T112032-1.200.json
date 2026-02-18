@@ -1,0 +1,25 @@
+{
+  "message": "Relatório de rifas gerado com sucesso",
+  "metadata": {
+    "data": [
+      {
+        "raffleName": "Rifa de Pascoa",
+        "participantsCount": 1,
+        "soldTicketsCount": 4,
+        "totalTicketsCount": 100
+      },
+      {
+        "raffleName": "Rifa de Ano Novo",
+        "participantsCount": 0,
+        "soldTicketsCount": 0,
+        "totalTicketsCount": 60
+      },
+      {
+        "raffleName": "Rifa de Natal",
+        "participantsCount": 0,
+        "soldTicketsCount": 0,
+        "totalTicketsCount": 200
+      }
+    ]
+  }
+}

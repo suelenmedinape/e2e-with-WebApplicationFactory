@@ -1,0 +1,14 @@
+{
+  "message": "Sucesso ao buscar rifas",
+  "metadata": {
+    "data": {
+      "id": 1,
+      "raffleName": "Rifa de Pascoa",
+      "description": "FUncione imediatamente",
+      "totalTickets": 100,
+      "ticketPrice": 20.00,
+      "drawDate": "2025-12-31T21:00:00Z",
+      "status": 2
+    }
+  }
+}

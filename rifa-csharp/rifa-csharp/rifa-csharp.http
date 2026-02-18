@@ -1,0 +1,16 @@
+@rifa_csharp_HostAddress = http://localhost:5209
+
+GET {{rifa_csharp_HostAddress}}/raffle/listNamesRaffle
+Accept: application/json
+
+###
+GET {{rifa_csharp_HostAddress}}/raffle/1
+Accept: application/json
+
+###
+GET {{rifa_csharp_HostAddress}}/raffle/listParticipants/1
+Accept: application/json
+
+###
+GET {{rifa_csharp_HostAddress}}/raffle/getReport
+Accept: application/json

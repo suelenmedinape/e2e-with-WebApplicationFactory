@@ -1,0 +1,18 @@
+{
+  "message": "Participantes listados com sucesso",
+  "metadata": {
+    "data": [
+      {
+        "id": 1,
+        "participantName": "Otávio",
+        "phone": "22999999999",
+        "ticketNumbers": [
+          1,
+          10,
+          45,
+          80
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rifa-csharp", "rifa-csharp\rifa-csharp.csproj", "{4ECC1245-D5CD-4B04-9F69-E389D2F3C739}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rifa-csharp-tests", "rifa-csharp-tests\rifa-csharp-tests.csproj", "{F318A09B-E688-40D4-A83C-78C3183FF92E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4ECC1245-D5CD-4B04-9F69-E389D2F3C739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ECC1245-D5CD-4B04-9F69-E389D2F3C739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ECC1245-D5CD-4B04-9F69-E389D2F3C739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ECC1245-D5CD-4B04-9F69-E389D2F3C739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F318A09B-E688-40D4-A83C-78C3183FF92E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F318A09B-E688-40D4-A83C-78C3183FF92E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F318A09B-E688-40D4-A83C-78C3183FF92E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F318A09B-E688-40D4-A83C-78C3183FF92E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

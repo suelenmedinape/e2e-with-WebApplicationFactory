@@ -1,0 +1,7 @@
+﻿services:
+  rafflehub.api:
+    image: rafflehub.api
+    build:
+      context: .
+      dockerfile: RaffleHub.Api/Dockerfile
+

@@ -1,120 +1,69 @@
-# Rifa C# Backend
+# RaffleHub API 🎟️
 
-Este é o repositório para o backend do sistema de Rifas, desenvolvido utilizando ASP.NET Core 9, Entity Framework Core e outras tecnologias modernas do ecossistema .NET. O projeto segue uma arquitetura limpa e padrões de design como Repositório e Unidade de Trabalho (Unit of Work).
+RaffleHub é uma solução robusta desenvolvida em **ASP.NET Core 9** para o gerenciamento completo de rifas online. O projeto utiliza uma arquitetura moderna, focada em performance, escalabilidade e, acima de tudo, **confiabilidade através de uma cobertura rigorosa de testes End-to-End (E2E)**.
 
-## 🚀 Sobre o Projeto
+## 🧪 Estratégia de Testes E2E (End-to-End)
 
-O objetivo deste projeto é fornecer uma API robusta e segura para gerenciar múltiplas rifas online. Ele permite a criação de rifas, gerenciamento de participantes, venda e controle de bilhetes, autenticação de usuários e uma galeria de imagens para os prêmios.
+O diferencial deste projeto é a sua camada de testes automatizados, localizada no projeto `RaffleHub.Tests.E2E`. Diferente de testes unitários que validam métodos isolados, nossos testes E2E validam o fluxo completo da requisição: desde o recebimento do payload no Controller, passando pela lógica de serviço e validações do FluentResults, até a persistência simulada.
 
-## ✨ Funcionalidades Principais
+### 🛠️ Tecnologias de Teste
+- **xUnit**: Framework principal para execução dos testes.
+- **WebApplicationFactory**: Utilizada para subir o servidor da API em memória, garantindo que o teste reflita o comportamento real do ambiente de produção.
+- **Entity Framework InMemory**: Substituímos o banco de dados PostgreSQL por um banco em memória durante os testes, permitindo isolamento total entre as execuções e velocidade extrema.
+- **MultipartFormDataContent**: Suporte nativo para testar endpoints que recebem formulários complexos (incluindo upload de imagens).
 
-- **Gerenciamento de Rifas**: CRUD completo para rifas, com status (Aberta, Finalizada, etc.).
-- **Gerenciamento de Participantes**: Cadastro e controle de informações dos participantes.
-- **Controle de Bilhetes**: Lógica para reserva e marcação de bilhetes como pagos.
-- **Autenticação e Autorização**: Sistema de login baseado em JWT (JSON Web Tokens) com papéis de usuário (Roles).
-- **Galeria de Imagens**: Upload e gerenciamento de imagens para as rifas, com integração a um serviço de armazenamento (como Supabase).
-- **Consultas e Relatórios**: Endpoints para sumarizar dados, como detalhes de uma rifa específica e listagem de todas as rifas.
+### 🔍 O que é validado?
+Os testes cobrem os cenários críticos do ciclo de vida de uma rifa:
 
-## 🛠️ Tecnologias Utilizadas
+1.  **Criação de Rifa**:
+    -   **Sucesso**: Valida se a API retorna `201 Created` e um `Guid` válido ao enviar dados corretos.
+    -   **Falha**: Valida se a API retorna `400 BadRequest` e as mensagens de erro corretas ao enviar dados inválidos (ex: nome vazio, preço zero).
+2.  **Consulta e Listagem**:
+    -   Valida a integridade da listagem total de rifas e a recuperação de uma rifa específica por ID.
+3.  **Atualização de Dados**:
+    -   Garante que alterações em nomes, descrições e preços são persistidas corretamente.
+4.  **Gerenciamento de Status**:
+    -   Valida a transição de estados da rifa (ex: de `ACTIVE` para `COMPLETED`).
 
-- **Framework**: .NET 9 / ASP.NET Core 9
-- **ORM**: Entity Framework Core 8+
-- **Banco de Dados**: Projetado para ser usado com PostgreSQL (mas pode ser adaptado para outros bancos suportados pelo EF Core).
-- **Autenticação**: ASP.NET Core Identity e JWT Bearer Tokens.
-- **Mapeamento de Objetos**: AutoMapper
-- **Testes**: xUnit
-- **Containerização**: Docker
-- **Documentação da API**: Swagger (OpenAPI)
-- **Armazenamento de Arquivos**: Integração com [Supabase Storage](https://supabase.com/docs/guides/storage) para a galeria de imagens.
+### 🚀 Como executar os testes
+Para garantir que a API está funcionando perfeitamente, execute o comando abaixo na pasta `rifa-csharp`:
 
-## ✅ Pré-requisitos
+```bash
+dotnet test
+```
 
-Antes de começar, você precisará ter o seguinte instalado em sua máquina:
-- [.NET SDK 9](https://dotnet.microsoft.com/download/dotnet/9.0) ou superior.
-- [Docker](https://www.docker.com/get-started) (Opcional, para execução em contêiner).
-- Um editor de código de sua preferência (e.g., VS Code, JetBrains Rider).
-- Uma instância de banco de dados PostgreSQL.
+Este comando irá restaurar as dependências, compilar os projetos e executar todos os cenários de teste, fornecendo um relatório detalhado de sucesso/falha.
 
-## ⚙️ Como Executar o Projeto
+---
 
-1. **Clone o repositório:**
-   ```bash
-   git clone <url-do-seu-repositorio>
-   cd rifa-csharp/rifa-csharp
-   ```
+## 🛠️ Tecnologias Principais
+-   **Backend**: .NET 9 (C#)
+-   **Database**: PostgreSQL + EF Core
+-   **Result Pattern**: FluentResults para tratamento elegante de erros de domínio.
+-   **Mapping**: AutoMapper para conversão de Entidades/DTOs.
+-   **Background Jobs**: Hangfire para processamentos assíncronos.
+-   **Storage**: Integração com Supabase para galeria de fotos.
 
-2. **Configure as Variáveis de Ambiente:**
-   Renomeie ou crie o arquivo `appsettings.Development.json`. Você precisará configurar a string de conexão com o banco de dados e as credenciais do Supabase.
+## ⚙️ Configuração do Ambiente
 
-   ```json
-   {
-     "ConnectionStrings": {
-       "DefaultConnection": "Host=localhost;Port=5432;Database=RifasDB;Username=postgres;Password=your_password"
-     },
-     "Supabase": {
-       "Url": "YOUR_SUPABASE_URL",
-       "ApiKey": "YOUR_SUPABASE_API_KEY"
-     },
-     "JWT": {
-        "Secret": "YOUR_SUPER_SECRET_KEY_HERE_WITH_AT_LEAST_32_CHARS",
-        "Issuer": "https://localhost:7123",
-        "Audience": "https://localhost:7123"
-     }
-   }
-   ```
+1.  **Clonagem e Dependências**:
+    ```bash
+    dotnet restore
+    ```
+2.  **Banco de Dados**:
+    Configure a ConnectionString no `appsettings.json` e execute:
+    ```bash
+    dotnet ef database update
+    ```
+3.  **Execução**:
+    ```bash
+    dotnet run --project RaffleHub.Api
+    ```
 
-3. **Restaure as dependências:**
-   ```bash
-   dotnet restore
-   ```
+## 🗂️ Estrutura do Repositório
+-   `RaffleHub.Api`: O core da aplicação (Controllers, Services, Repositories).
+-   `RaffleHub.Tests.E2E`: Suite de testes que garante que nenhuma alteração de código quebre as funcionalidades existentes.
 
-4. **Aplique as Migrations do Banco de Dados:**
-   O Entity Framework Core usará as migrations para criar o schema do banco de dados para você.
-   ```bash
-   dotnet ef database update
-   ```
-   *Nota: Se o comando `dotnet ef` não for encontrado, instale-o globalmente com `dotnet tool install --global dotnet-ef`.*
+---
 
-5. **Execute a aplicação:**
-   ```bash
-   dotnet run
-   ```
-   A API estará disponível em `https://localhost:7123` (ou a porta configurada em `Properties/launchSettings.json`).
-
-### Executando com Docker
-
-1. Certifique-se de que sua `appsettings.json` esteja configurada para se conectar a uma instância do PostgreSQL acessível pelo contêiner (pode ser necessário usar o endereço de rede do host em vez de `localhost`).
-
-2. Construa a imagem Docker:
-   ```bash
-   docker build -t rifa-csharp -f Dockerfile .
-   ```
-
-3. Execute o contêiner:
-   ```bash
-   docker run -p 8080:8080 -e "ASPNETCORE_URLS=http://+:8080" rifa-csharp
-   ```
-   A API estará disponível em `http://localhost:8080`.
-
-## 🗂️ Estrutura do Projeto
-
-A solução está dividida em pastas que separam as responsabilidades:
-
-- `Controller/`: Contém os endpoints da API (Controllers).
-- `Data/`: Configuração do `AppDbContext` do Entity Framework.
-- `DTO/`: Data Transfer Objects, usados para modelar os dados que entram e saem da API.
-- `Entities/`: As classes de domínio que são mapeadas para as tabelas do banco de dados.
-- `Enums/`: Enumerações utilizadas no projeto.
-- `Interface/`: Contratos para os serviços e repositórios (Injeção de Dependência).
-- `Migrations/`: Arquivos de migração do banco de dados gerados pelo EF Core.
-- `Repositories/`: Implementação dos padrões de design Repositório e Unit of Work.
-- `Service/`: Onde reside a lógica de negócios da aplicação.
-- `Utils/`: Classes utilitárias, como perfis de mapeamento do AutoMapper.
-
-## 📄 Endpoints da API
-
-Após executar a aplicação, a documentação completa e interativa da API estará disponível via Swagger UI.
-
-Acesse: **[https://localhost:5209/swagger/index.html](https://localhost:5209/swagger/index.html)**
-
-Lá você poderá ver todos os endpoints, seus parâmetros, e até mesmo testá-los diretamente pelo navegador.
+> **Nota Técnica sobre os Testes**: Cada execução de teste utiliza um identificador único de banco de dados (`Guid.NewGuid().ToString()`), garantindo que um teste nunca interfira nos dados de outro, permitindo execução paralela e determinística.

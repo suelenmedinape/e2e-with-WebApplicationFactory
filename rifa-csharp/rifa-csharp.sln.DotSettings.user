@@ -1,4 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ACreatedAtActionResult_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002Econfig_003FJetBrains_003FRider2025_002E3_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003Fdc2c3c45dfa74abdb6c5ca467c5bab301daa00_003F46_003F2b015843_003FCreatedAtActionResult_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AMapper_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002Econfig_003FJetBrains_003FRider2025_002E3_003Fresharper_002Dhost_003FSourcesCache_003Ff1246839d29201e3a70ea31cb97b0926bd0bc9ecf0fc17b763e7a8262b9e_003FMapper_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=28ce5079_002D3019_002D42d1_002D8301_002D2dc9f2a1328f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="updateRaffle: Deve retornar sucesso se os dados estiverem corretos #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::F318A09B-E688-40D4-A83C-78C3183FF92E::net9.0::rifa_csharp_tests.RaffleTests.RaffleServiceTests.UpdateRaffle_DataCorrect_ShouldReturnSuccess&lt;/TestId&gt;
@@ -8,6 +10,7 @@
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=68700a24_002Da9a3_002D4acd_002Db46f_002Dba59a895f71e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="updateRaffle: Deve retornar sucesso se os dados estiverem corretos" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::F318A09B-E688-40D4-A83C-78C3183FF92E::net9.0::rifa_csharp_tests.RaffleTests.RaffleServiceTests.UpdateRaffle_DataCorrect_ShouldReturnSuccess&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::03720CE6-DEFE-4A18-8809-19B7FD7AE631::net9.0::RaffleHub.Tests.RaffleServiceTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::7DFA66C3-CAF8-4291-800E-8703C64CB04D::net9.0::RaffleHub.Tests.E2E.RaffleE2ETests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -46,19 +46,42 @@ Este comando irá restaurar as dependências, compilar os projetos e executar to
 
 ## ⚙️ Configuração do Ambiente
 
-1.  **Clonagem e Dependências**:
-    ```bash
-    dotnet restore
-    ```
-2.  **Banco de Dados**:
-    Configure a ConnectionString no `appsettings.json` e execute:
-    ```bash
-    dotnet ef database update
-    ```
-3.  **Execução**:
-    ```bash
-    dotnet run --project RaffleHub.Api
-    ```
+O projeto agora está totalmente configurado para rodar facilmente com o **Docker Compose**, que cuida tanto do banco de dados PostgreSQL quanto da API.
+
+### 🐳 Rodando com Docker (Recomendado)
+
+1. **Subir os containers**:
+   Na pasta `rifa-csharp` onde está o arquivo `compose.yaml`, execute:
+   ```bash
+   docker compose up -d
+   ```
+   Isso irá iniciar o banco de dados na porta `5433` (para não conflitar com bancos locais) e iniciar a API. As migrações são aplicadas automaticamente, então não é preciso rodá-las na mão.
+
+2. **Acessar a API**:
+   A API estará disponível na porta `8080` rodando no modo de Desenvolvimento. Você pode testar os endpoints através do Swagger:
+   - 👉 **http://localhost:8080/swagger/index.html**
+
+3. **Parar os containers**:
+   ```bash
+   docker compose down
+   ```
+
+### 💻 Rodando Localmente (API via .NET CLI)
+
+Se preferir rodar a API de forma local para depuração e apenas hospedar o banco de dados via Docker:
+
+1. **Subir apenas o banco de dados**:
+   ```bash
+   docker compose up -d postgres
+   ```
+2. **Aplicar as Migrations** (na pasta `rifa-csharp`):
+   ```bash
+   dotnet ef database update --project RaffleHub.Api --startup-project RaffleHub.Api
+   ```
+3. **Rodar a API**:
+   ```bash
+   dotnet run --project RaffleHub.Api
+   ```
 
 ## 🗂️ Estrutura do Repositório
 -   `RaffleHub.Api`: O core da aplicação (Controllers, Services, Repositories).

@@ -2,6 +2,10 @@
 
 RaffleHub é uma solução robusta desenvolvida em **ASP.NET Core 9** para o gerenciamento completo de rifas online. O projeto utiliza uma arquitetura moderna, focada em performance, escalabilidade e, acima de tudo, **confiabilidade através de uma cobertura rigorosa de testes End-to-End (E2E)**.
 
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-6E9F18?style=for-the-badge&logo=dotnet&logoColor=white)
+![C#](https://img.shields.io/badge/c%23-f8efd4.svg?style=for-the-badge&logo=c%2B%2B&logoColor=783c00)
+
 ## 🧪 Estratégia de Testes E2E (End-to-End)
 
 O diferencial deste projeto é a sua camada de testes automatizados, localizada no projeto `RaffleHub.Tests.E2E`. Diferente de testes unitários que validam métodos isolados, nossos testes E2E validam o fluxo completo da requisição: desde o recebimento do payload no Controller, passando pela lógica de serviço e validações do FluentResults, até a persistência simulada.

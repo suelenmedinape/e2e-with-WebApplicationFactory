@@ -1,0 +1,21 @@
+name: E2E Tests CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4
+      
+    - name: Rodar Testes E2E com Docker Compose
+      # Entramos na pasta rifa-csharp e mandamos o compose construir e rodar o container
+      # O --rm serve para ele se destruir logo após terminar os testes (limpar a sujeira)
+      working-directory: ./rifa-csharp
+      run: docker compose run --rm rafflehub.e2e

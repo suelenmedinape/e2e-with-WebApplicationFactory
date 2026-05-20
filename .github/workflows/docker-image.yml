@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout do código
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       
     - name: Rodar Testes E2E com Docker Compose
       # Entramos na pasta rifa-csharp e mandamos o compose construir e rodar o container

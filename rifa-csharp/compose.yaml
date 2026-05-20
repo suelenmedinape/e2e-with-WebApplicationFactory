@@ -1,4 +1,4 @@
-﻿services:
+services:
   postgres:
     image: postgres:15-alpine
     environment:
@@ -23,6 +23,13 @@
       - "8080:8080"
     depends_on:
       - postgres
+
+  rafflehub.e2e:
+    image: rafflehub.e2e
+    profiles: ["test"]
+    build: 
+      context: .
+      dockerfile: RaffleHub.Tests.E2E/Dockerfile
 
 volumes:
   postgres_data:
